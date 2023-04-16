@@ -8,10 +8,14 @@
     "scripts": ["background.js"],
     "persistent": false
   },
-  "permissions": ["declarativeContent", "activeTab", "storage"],
+  "externally_connectable": {
+    "matches": ["*://localhost:*/*", "*://*.vercel.app/*", "*://curated-ai.space/*"],
+    "ids": ["*"]
+  },
+  "permissions": ["declarativeContent", "tabs", "activeTab", "storage", "<all_urls>"],
   "manifest_version": 2,
   "browser_action": {
-    "default_icon" : "img/extension_icon.png",
+    "default_icon": "img/extension_icon.png",
     "default_title": "Create Bookmark"
   },
   "icons": {
